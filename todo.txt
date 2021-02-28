@@ -1,0 +1,15 @@
+    Frontend
+x fully impliment redux. use it to impliment the async api calls
+x impliment react router. route out home page to enter in steamid (do this 2nd to last)
+- style app a bit. maybe react bootstrap to expidite styling? 
+
+    Backend
+x add all games to database for user
+- create api endpoint to get all games with the same appid as user
+x make friends belong_to :user
+
+don't save friend games to the database, make an endpoint that makes another api call for each friend, and iderate through that list to get all their games. compare those arrays to what's in user's game library, and json output the name, and img_logo_url
+
+OR
+
+array of lists, 
