@@ -1,33 +1,37 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux';
+import React from 'react'
+import { connect, useSelector } from 'react-redux'
 import fetchGames from '../actions/fetchGames';
-import GameList from './GameList'
+import Gamelist from './GameList'
 
-class GameListContainer extends Component {
+const GameListContainer = (props) => {
+    const state = useSelector(state => state.games) 
 
-    componentDidMount(){
-        this.props.fetchGames()
+    const handleClick = () => {  
+        
+        console.log(state);
     }
-    
-    render() {
-        const games = this.props.games.games
-        while (this.props.games.games === undefined || this.props.games.games.lenght == 0) {
-            return <p>select friends to get started</p>
-        }
-        return (
+    while (state.loading) {
+        return(
             <div>
-                {games.games.map(game => <GameList game={game} />)}
+                <p>Select friends to search for games</p>
+                <button onClick={handleClick}>getGames</button>
             </div>
         )
     }
+    return (
+        <div>
+            {state.games.map(game => <Gamelist game={game} />)}
+        </div>
+    )
 }
 
-
 const mapStateToProps = games => {
-    return{
+    return {
         games
     }
 }
 
 export default connect(mapStateToProps, {fetchGames}) (GameListContainer)
+
+
 

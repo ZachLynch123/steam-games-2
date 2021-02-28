@@ -1,15 +1,17 @@
 import React from 'react'
 import addToGroup from '../actions/addToGroup';
 import postGroup from '../actions/postGroup';
-import fetchGames from '../actions/fetchGames'
+import fetchGames from '../actions/fetchGames';
 import { useSelector, connect } from 'react-redux'
 import Group from './Group';
 
 const GroupListContainer = (props) => {
     const group = useSelector(state => state.group.group)
+    const games = useSelector(state => state.games)
+    console.log();
     const handleClick = () => {  
         props.postGroup(group)
-        props.fetchGames()
+        //props.fetchGames()
     }
     
     return (

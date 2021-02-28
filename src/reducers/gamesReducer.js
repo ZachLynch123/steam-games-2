@@ -1,14 +1,15 @@
-const gameReducer = (state={games: []}, action) => {
+
+
+const gameReducer = (state={games: [], loading: true}, action) => {
     switch(action.type) {
         case "FETCH_GAMES":
-            return{
-                games: action.payload
+            if (action.payload.length > 0) {
+                console.log(action.payload);
+                return {
+                    games: action.payload,
+                    loading: false
+                }
             }
-        case "POST_GROUP":
-            return {
-
-            }
-
         default:
             return state
     }

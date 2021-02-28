@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function GameList(props) {
-    console.log(props);
     const game = props.game
     return (
         <div>
