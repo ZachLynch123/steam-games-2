@@ -31,7 +31,7 @@ class Home extends Component {
     redirectOrRenderForm = () => {
             return (
                 <form onSubmit={this.handleSubmit.bind(this)}>
-                    <label>new</label>
+                    <label>Enter Steamid: </label>
                     <input type="text" onChange={(event) => this.handleChange(event)} value={this.state.steamid} />
                     <input type="submit" value="Submit"/>
                 </form>

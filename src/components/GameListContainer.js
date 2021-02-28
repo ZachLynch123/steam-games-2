@@ -21,6 +21,7 @@ const GameListContainer = (props) => {
     return (
         <div>
             {state.games.map(game => <Gamelist game={game} />)}
+            <button onClick={handleClick}>getGames</button>
         </div>
     )
 }
