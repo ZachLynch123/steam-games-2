@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import fetchUser from '../actions/fetchUser';
+import Card from 'react-bootstrap/Card'
 
 export class UserBox extends React.Component {
 
@@ -8,10 +9,10 @@ export class UserBox extends React.Component {
   render() {
     const user = this.props.user.user.user
     return (
-      <div className="profile-box">
-        <img src={ `${user.avatarmedium}` } alt="no pic?" />
-         <h3>{user.personaname}</h3>
-        </div>
+      <Card style={{ width: '7rem' }}>
+        <Card.Img variant="top" src={ `${user.avatarmedium}` } alt="no pic?" />
+         <Card.Title>{user.personaname}</Card.Title>
+        </Card>
     )
   }
 }

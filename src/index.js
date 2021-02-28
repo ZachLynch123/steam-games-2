@@ -12,6 +12,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk';
 import groupReducer from './reducers/groupReducer';
 import gameReducer from './reducers/gamesReducer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const initialState = {}
  

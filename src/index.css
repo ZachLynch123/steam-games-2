@@ -12,24 +12,12 @@ code {
     monospace;
 }
 
-.profile-box {
-  width: 15%;
+.main-container {
+  padding: 2rem;
 }
 
-.friend-profile {
-  width: 5%;
-}
-
-.profile-box {
-  border: 2px solid #f00;
-  position: absolute;
-  right: 0;
-}
-
-.friend-profile {
-  border: 2px solid #0f0;
-}
-
-img {
-  width: 100%;
+.friends-container {
+  float: right;
+  margin-top: -9rem;
+  text-align: center;
 }

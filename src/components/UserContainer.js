@@ -6,6 +6,7 @@ import FriendsContainer from "./FriendsContainer";
 import GroupListContainer from "./GroupListContainer";
 import GameListContainer from './GameListContainer';
 import UserBox from './UserBox'
+import { Container } from "react-bootstrap";
 
 export class UserContainer extends React.Component {
 
@@ -18,11 +19,22 @@ export class UserContainer extends React.Component {
   render() {
     const user = this.props.user.user.user
     return (
-        <div>
+        <div className="main-container">
+          <div>
             <UserBox user={user}/> 
+          </div>
+            <div>
             <FriendsContainer />
+          </div>
+          <div>
             <GroupListContainer />
+          </div>
+          <div>
             <GameListContainer />
+          </div>
+            
+            
+            
         </div>
       
     )
