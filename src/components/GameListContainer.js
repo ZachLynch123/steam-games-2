@@ -7,7 +7,7 @@ const GameListContainer = (props) => {
     const state = useSelector(state => state.games) 
 
     const handleClick = () => {  
-        
+        props.fetchGames()
         console.log(state);
     }
     while (state.loading) {

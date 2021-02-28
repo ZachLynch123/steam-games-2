@@ -8,7 +8,6 @@ import Group from './Group';
 const GroupListContainer = (props) => {
     const group = useSelector(state => state.group.group)
     const games = useSelector(state => state.games)
-    console.log();
     const handleClick = () => {  
         props.postGroup(group)
         //props.fetchGames()

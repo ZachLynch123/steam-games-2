@@ -16,8 +16,6 @@ class FriendsContainer extends React.Component {
   handleClick = friend => {
     // add's clicked friend to friend group
     this.props.addToGroup(friend)
-    // this.props.removeFriend(friend)
-    // console.log(this.props);
   }
 
   
