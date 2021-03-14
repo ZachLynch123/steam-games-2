@@ -24,9 +24,12 @@ const GameListContainer = (props) => {
         )
     }
     return (
-        <div>
-            {state.games.map(game => <Gamelist game={game} />)}
+        <div className="container-fluid">
             <button onClick={handleClick}>getGames</button>
+
+            <div className="row">
+                    {state.games.map(game => <Gamelist game={game} />)} 
+            </div>
         </div>
     )
 }

@@ -12,8 +12,9 @@ const postGroup = (group) => {
         fetch(`http://localhost:3000/friend_games`, options)
         .then(res => res.json())
         .then(group => {
-            dispatch({type: "POST_GROUP", payload: group})
+            dispatch({type: "POST_GROUP", payload: group, loading: false})
         })
+
     }
 }
 

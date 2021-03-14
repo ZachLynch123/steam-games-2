@@ -1,4 +1,4 @@
-const groupReducer = (state={group: []}, action) => {
+const groupReducer = (state={group: [], loading: true}, action) => {
 
     switch(action.type) {
         case "FETCH_GROUP":
@@ -8,7 +8,8 @@ const groupReducer = (state={group: []}, action) => {
 
         case "ADD_TO_GROUP":
             return {
-                group: [...state.group, action.payload]
+                group: [...state.group, action.payload],
+                loading: true
             }
         
         case "REMOVE_FROM_GROUP":
@@ -19,7 +20,8 @@ const groupReducer = (state={group: []}, action) => {
         
         case "POST_GROUP":
             return {
-                group: action.payload
+                group: action.payload,
+                loading: false
             }
         default: 
         return state

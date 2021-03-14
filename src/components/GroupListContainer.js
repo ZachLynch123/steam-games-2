@@ -13,7 +13,6 @@ const GroupListContainer = (props) => {
             alert("Please add people to group before searching")
         } else {
             props.postGroup(group)
-
         } 
         //props.fetchGames()
     }
