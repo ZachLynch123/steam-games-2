@@ -8,8 +8,13 @@ import Group from './Group';
 const GroupListContainer = (props) => {
     const group = useSelector(state => state.group.group)
     const games = useSelector(state => state.games)
-    const handleClick = () => {  
-        props.postGroup(group)
+    const handleClick = () => { 
+        if (group.length == 0) {
+            alert("Please add people to group before searching")
+        } else {
+            props.postGroup(group)
+
+        } 
         //props.fetchGames()
     }
     

@@ -1,14 +1,19 @@
 import React from 'react'
 import { connect, useSelector } from 'react-redux'
 import fetchGames from '../actions/fetchGames';
+import addToGroup from '../actions/addToGroup'
 import Gamelist from './GameList'
 
 const GameListContainer = (props) => {
     const state = useSelector(state => state.games) 
+    const group = useSelector(state => state.group.group)
 
     const handleClick = () => {  
-        props.fetchGames()
-        console.log(state);
+        if (group.length == 0) {
+            alert("Please add friends to group before searching for games")
+        } else {
+            props.fetchGames()
+        }
     }
     while (state.loading) {
         return(
@@ -32,7 +37,7 @@ const mapStateToProps = games => {
     }
 }
 
-export default connect(mapStateToProps, {fetchGames}) (GameListContainer)
+export default connect(mapStateToProps, {fetchGames, addToGroup}) (GameListContainer)
 
 
 
