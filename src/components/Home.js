@@ -39,7 +39,6 @@ class Home extends Component {
     }
 
     render() {
-        // debugger
         return (
             <>
             {this.redirectOrRenderForm()}

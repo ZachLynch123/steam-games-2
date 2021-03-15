@@ -8,5 +8,4 @@ const fetchFriends = friends => {
   })
     }
 }
-
 export default fetchFriends;

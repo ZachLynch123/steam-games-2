@@ -11,14 +11,15 @@ import { Container } from "react-bootstrap";
 export class UserContainer extends React.Component {
 
   componentDidMount(){
+    console.log("A");
     this.props.fetchUser(this.props.location.pathname.split("/").pop())
+    console.log("B");
   }
-
- 
-
   render() {
     const user = this.props.user.user.user
-    return (
+    const loading = this.props.user.user.loading
+    if (!loading) {
+      return (
         <div className="main-container">
           <div>
             <UserBox user={user}/> 
@@ -32,12 +33,16 @@ export class UserContainer extends React.Component {
           <div>
             <GameListContainer />
           </div>
-            
-            
-            
         </div>
+      )
+    } else {
+      return(
+        <div>
+          <p>Loading...</p>
+        </div>
+      )
+    }
       
-    )
   }
 }
 

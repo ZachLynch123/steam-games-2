@@ -9,6 +9,14 @@ import removeFriend from '../actions/removeFriend';
 
 class FriendsContainer extends React.Component {
 
+
+  constructor(props){
+    super(props)
+    this.state = {
+        counter: 0
+    }
+}
+
   componentDidMount() {
     this.props.fetchFriends(window.location.href.split("/").pop())
   }
@@ -16,6 +24,17 @@ class FriendsContainer extends React.Component {
   handleClick = friend => {
     // add's clicked friend to friend group
     this.props.addToGroup(friend)
+  }
+
+  upvote = () => {
+    // better way to set state  
+    // write a blog post about redux, something specific like redux flow, or one specific thing about thunk, include code snippits
+    // write the README.MD
+    this.setState(prevState => {
+      return {counter: prevState.counter + 1}
+    })
+
+    console.log(this.state.counter);
   }
 
   
@@ -28,7 +47,9 @@ class FriendsContainer extends React.Component {
     return (
       <div className="friends-container">
           {friends.map(friend => {
-            return <Friend friend={friend} onClick={() => this.handleClick(friend)} />
+            return <div>
+              <Friend friend={friend} onClick={() => this.handleClick(friend)} upvote={this.upvote} counter ={this.state.counter}/>
+              </div>
           })}
       </div>
     );
